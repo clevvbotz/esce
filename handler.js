@@ -1327,6 +1327,7 @@ export async function handler(chatUpdate) {
         } catch (e) {
             console.log(m, m.quoted, e)
         }
+        await this.chatRead(m.key)
         if (opts["autoread"])
             await this.chatRead(m.key).catch(() => {})
     }
